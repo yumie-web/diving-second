@@ -19,6 +19,8 @@
 }
 
 .c-card__body {
+  display: flex;
+  flex-direction: column;
   padding: rem(24) rem(16);
   @include mq(md) {
     padding: rem(40) rem(16);
