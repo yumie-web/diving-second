@@ -1,0 +1,82 @@
+@use 'global' as *;
+
+.commonBtn {
+  display: inline-block;
+  color: $white;
+  font-weight: 400;
+  background-color: $accent;
+  border: 1px solid $accent;
+  padding: rem(16) rem(88) rem(16) rem(40);
+  font-family: $En-font-family;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+// 背景線
+.commonBtn::before {
+  position: absolute;
+  content: "";
+  border: 1px solid $accent;
+  top: rem(4);
+  left: rem(4);
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  z-index: -2;
+}
+
+.commonBtn::after {
+  background: $white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: .2s cubic-bezier(0.45, 0, 0.55, 1);
+  z-index: -1;
+}
+
+.commonBtn__text {
+
+}
+
+// 矢印　横
+.commonBtn__arrow::before {
+  position: absolute;
+  content: "";
+  width: rem(40);
+  height: rem(1);
+  top: 50%;
+  right: rem(32);
+  transform: translateY(-50%);
+  background-color: $white;
+}
+
+// 矢印　矢の所
+.commonBtn__arrow::after {
+  position: absolute;
+  content: "";
+  width: rem(1);
+  height: rem(10);
+  top: calc(50% - rem(8));
+  transform: translateY(calc(-50% + rem(4))) rotate(-45deg);
+  right: rem(36);
+  background-color: $white;
+}
+
+// hover時　
+.commonBtn:hover {
+  color: $accent;
+}
+
+.commonBtn:hover .commonBtn__arrow::before {
+  background-color: #408F95;
+}
+
+.commonBtn:hover .commonBtn__arrow::after {
+  background-color: #408F95;
+}
