@@ -2,10 +2,12 @@
 
 .commonBtn {
   display: inline-block;
+  text-decoration: none;
   color: $white;
   font-weight: 400;
   background-color: $accent;
   border: 1px solid $accent;
+  line-height: calc(22 / 14);
   padding: rem(16) rem(88) rem(16) rem(40);
   font-family: $En-font-family;
   position: relative;
@@ -41,10 +43,10 @@
 }
 
 .commonBtn__text {
-
+  margin-left: rem(8);
 }
 
-// 矢印　横
+// 矢印 横
 .commonBtn__arrow::before {
   position: absolute;
   content: "";
@@ -56,7 +58,7 @@
   background-color: $white;
 }
 
-// 矢印　矢の所
+// 矢印 矢の所
 .commonBtn__arrow::after {
   position: absolute;
   content: "";
@@ -71,12 +73,18 @@
 // hover時　
 .commonBtn:hover {
   color: $accent;
+  z-index: 1;
 }
 
 .commonBtn:hover .commonBtn__arrow::before {
-  background-color: #408F95;
+  background-color: $accent;
 }
 
 .commonBtn:hover .commonBtn__arrow::after {
-  background-color: #408F95;
+  background-color: $accent;
 }
+
+.commonBtn:hover::after {
+  transform: scale(1, 1);
+}
+
